@@ -5,58 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Landing Page Demo</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 <body>
-    <div class="section" id="section1" style="background-color: #ffcc00;">
-        <h1>Welcome to AI Landing Page</h1>
-    </div>
-    <div class="section" id="section2" style="background-color: #00ccff;">
-        <h1>Explore Our Features</h1>
-    </div>
-    <div class="section" id="section3" style="background-color: #ff6699;">
-        <h1>Get Started Today</h1>
-    </div>
+    <header>
+        <h1>Welcome to the AI Landing Page Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script>
-        $(document).ready(function () {
-            // Check if an element is in the viewport
-            function isInViewport(element) {
-                const elementTop = $(element).offset().top;
-                const elementBottom = elementTop + $(element).outerHeight();
-                const viewportTop = $(window).scrollTop();
-                const viewportBottom = viewportTop + $(window).height();
-                return elementBottom > viewportTop && elementTop < viewportBottom;
-            }
+    <main>
+        <section id="features">
+            <h2>Features</h2>
+            <p>Discover the amazing features of our AI solutions.</p>
+        </section>
 
-            // Add scroll event listener
-            $(window).on('scroll', function () {
-                $('.section').each(function () {
-                    if (isInViewport(this)) {
-                        $(this).addClass('visible');
-                    }
-                });
-            });
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Learn more about our mission and values.</p>
+        </section>
 
-            // Trigger scroll event on page load to check for elements in viewport
-            $(window
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 AI Landing Page Demo. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
