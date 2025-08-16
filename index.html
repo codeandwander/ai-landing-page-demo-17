@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,48 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Landing Page Demo</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        #section1 { background-color: #f1c40f; }
+        #section2 { background-color: #e67e22; }
+        #section3 { background-color: #e74c3c; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the AI Landing Page Demo</h1>
-        <nav>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="features">
-            <h2>Features</h2>
-            <p>Discover the amazing features of our AI solutions.</p>
-        </section>
-
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Learn more about our mission and values.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="submit_form.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 AI Landing Page Demo. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js" defer></script>
-</body>
-</html>
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+    <section id="section1" data-aos="fade-up">
+        <h1>Welcome to AI Landing Page Demo</h1>
+    </section>
+    <section id="section2" data-aos="fade-up">
+        <h2>About Our AI Solutions</h2>
+    </section>
+    <section id="section3" data-aos="fade-up">
+        <h2>Get Started Today!</h2>
+    </section>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1200,
+            once: true // whether animation should happen only once while scrolling down
+        });
+        
+        // Error handling for AOS initialization
+        try {
+            AOS.refresh();
+        } catch (error) {
+            console.error
